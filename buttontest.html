@@ -1,29 +1,49 @@
 <html>
 <head>
 <style>
+body{
+	background-color: #000;
+	color: #FFF;
+}
+
 img{
 
 }
 
 #sample_filter{
-	position:relative;
+	position: relative;
 }
 
-#sample_opacity{
-	position:relative;
+#sample_opacity, #sample_opacity div{
+	position: relative;
+	height: 60px;
+}
+
+#sample_opacity img{
+	position: absolute;
 }
 
 .button_blink_filter{
-	-webkit-animation: a_filter_brighteness 1s ease-in 0s infinite alternate;
+	-webkit-animation: a_blink_filter 1s ease-in 0s infinite alternate;
 }
 
 .button_blink_filter_fast{
-	-webkit-animation: a_filter_brighteness 0.7s ease-in 0s infinite alternate;
+	-webkit-animation: a_blink_filter 0.7s ease-in 0s infinite alternate;
 }
 
+.button_blink_opacity{
+	-webkit-animation: a_blink_opacity 1s ease-in 0s infinite alternate;
+}
 
+.button_blink_opacity_fast{
+	-webkit-animation: a_blink_opacity 0.7s ease-in 0s infinite alternate;
+}
 
-@-webkit-keyframes a_filter_brighteness{
+.filter_test{
+	-webkit-filter: brightness(150%);
+}
+
+@-webkit-keyframes a_blink_filter{
 0%, from{
 	-webkit-filter: brightness(100%);
 }
@@ -46,18 +66,44 @@ img{
 
 
 </script>
-
 </head>
+
 <body>
 <div id="sample_filter">
-	<h1>CSS Color Filterによる明滅</h1>
+	<h1>CSS Filterによる明滅</h1>
+	<h2>※iOS8, Android4.4, Chrome Mobile</h2
+
+	<div>
 	<image src="images/button1.gif" class="button_blink_filter" width=200>
+	</div>
+
+	<div>
+		<image src="images/button2.gif" class="button_blink_filter_fast" width=250>
+	</div>
+
+	<h1>CSS3 Filter動作チェック</h1>
+	通常
+	<image src="images/button2.gif" width=250><br>
+	明るく
+	<image src="images/button2.gif" class="filter_test" width=250>
+	
 </div>
 
-<div>
-	<image src="images/button2.gif" class="button_blink_filter_fast" width=250>
-</div>
-<div>
 
-<body>
+<div id="sample_opacity">
+	<h1>CSS Opacityによる明滅</h1>
+	<h2>すべてのOSで動作</h2>
+	<image src="images/button1.gif" width=200>
+	<image src="images/button1_w.gif" class="button_blink_opacity" width=200>
+
+	<div>
+		<image src="images/button1.gif" width=200>
+		<image src="images/button1_w.gif" class="button_blink_opacity" width=200>
+	</div>
+	<div>
+		<image src="images/button2.gif" width=200>
+		<image src="images/button2_w.gif" class="button_blink_opacity_fast" width=200>
+	</div>
+</div>
+</body>
 </html>
