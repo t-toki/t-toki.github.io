@@ -1,0 +1,329 @@
+<!--{% load smartphone_extra %}-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=320, user-scalable=no">
+<title>{{app_name}}</title>
+<style>
+:root {
+	background:#333;
+}
+</style>
+<script type="text/javascript">
+	if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0) {
+		document.write('<style type="text/css">* {-webkit-transform:translateZ(0)}</style>');
+	}	
+</script>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<!--<link href="{{image_base_path}}/css/main.css" rel="stylesheet" type="text/css">
+{% if not opensocial_sandbox %}<script type="text/javascript" charset="utf-8" src="http://i.pf.gree.jp/js/app/touch.js"></script>{% else %}<script type="text/javascript" charset="utf-8" src="http://pf-sb.gree.jp/js/app/touch.js"></script>{% endif %}
+--><script type="text/javascript">
+	//デバッグ（ローカル作業では「1」を使用）
+	var debug = 1;
+	
+	//サーバ差し替え用変数
+	var next_url = "";
+	
+	//メッセージ
+	var str1_1="ヨーロピアンチャレンジ第2弾は『決戦！ヨーロピアンコロッセオ』。";
+	var str2_1="「コスト無制限」「コスト200以下」「コスト100以下」のどれかのクラスに参加し、頂点を目指しましょう。";
+	var str3_1="いつものチームとは別に、参加したクラスのルールに従ってイベント用のチームを作ることができますよ。";
+	var str4_1="普段とは違うチーム作りを楽しんでくださいね！";
+	var str5_1="さらに、イベント期間中に合計１０勝すると次回のイベントで役立つアイテムが必ず獲得できるので、たくさん試合をしてくださいね！";
+
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+<!--<script type="text/javascript" src="{{image_base_path}}/js/main.js"></script>
+{% load_args_composition %}-->
+</head>
+
+<body>
+<div id="contents">
+	<div id="field">
+		<div id="img_load_dummy">
+			<img src="{{image_base_path}}/image/bg_line1m.png">
+			<img src="{{image_base_path}}/image/bg_line4m.png">
+			<img src="{{image_base_path}}/image/bg_line7m.png">
+			<img src="{{image_base_path}}/image/bg_line10m.png">
+		</div>
+		
+		<div id="cp1">
+			<div class="black" id="cp1_obj_bg"></div>
+			<img id="cp1_bg" src="{{image_base_path}}/image/bg.png">
+			<div class="white" id="cp1_bg_white"></div>
+			
+			<div id="cp1_bg_obj1">
+				<img class="rb_bg_uobj_uv2_u0_p05_1_11" src="{{image_base_path}}/image/bg_obj11.png">
+				<img class="rb_bg_uobj_uv2_u0_p05_2_10" src="{{image_base_path}}/image/bg_obj10.png">
+				<div class="rb_bg_uobj_uv2_u0_p05_3_3">
+				  <div class="rb_bg_uobj_uv2_u0_p05_3_3_1_2">
+				    <img class="rb_bg_uobj_uv2_u0_p05_3_3_1_2_1_1" src="{{image_base_path}}/image/bg_obj1.png">
+				  </div>
+				</div>
+				<div class="rb_bg_uobj_uv2_u0_p05_5_6">
+				  <div class="rb_bg_uobj_uv2_u0_p05_5_6_1_5">
+				    <img class="rb_bg_uobj_uv2_u0_p05_5_6_1_5_1_4" src="{{image_base_path}}/image/bg_obj4.png">
+				  </div>
+				</div>
+				<div class="rb_bg_uobj_uv2_u0_p05_7_6">
+				  <div class="rb_bg_uobj_uv2_u0_p05_7_6_1_5">
+				    <img class="rb_bg_uobj_uv2_u0_p05_7_6_1_5_1_4" src="{{image_base_path}}/image/bg_obj4.png">
+				  </div>
+				</div>
+				<div class="rb_bg_uobj_uv2_u0_p05_9_6">
+				  <div class="rb_bg_uobj_uv2_u0_p05_9_6_1_5">
+				    <img class="rb_bg_uobj_uv2_u0_p05_9_6_1_5_1_4" src="{{image_base_path}}/image/bg_obj4.png">
+				  </div>
+				</div>
+				<div class="rb_bg_uobj_uv2_u0_p05_11_9">
+				  <div class="rb_bg_uobj_uv2_u0_p05_11_9_1_8">
+				    <img class="rb_bg_uobj_uv2_u0_p05_11_9_1_8_1_7" src="{{image_base_path}}/image/bg_obj7.png">
+				  </div>
+				</div>
+				<div class="rb_bg_uobj_uv2_u0_p05_13_9">
+				  <div class="rb_bg_uobj_uv2_u0_p05_13_9_1_8">
+				    <img class="rb_bg_uobj_uv2_u0_p05_13_9_1_8_1_7" src="{{image_base_path}}/image/bg_obj7.png">
+				  </div>
+				</div>
+				<div class="rb_bg_uobj_uv2_u0_p05_15_9">
+				  <div class="rb_bg_uobj_uv2_u0_p05_15_9_1_8">
+				    <img class="rb_bg_uobj_uv2_u0_p05_15_9_1_8_1_7" src="{{image_base_path}}/image/bg_obj7.png">
+				  </div>
+				</div>
+				<div class="rb_bg_uobj_uv2_u0_p05_17_9">
+				  <div class="rb_bg_uobj_uv2_u0_p05_17_9_1_8">
+				    <img class="rb_bg_uobj_uv2_u0_p05_17_9_1_8_1_7" src="{{image_base_path}}/image/bg_obj7.png">
+				  </div>
+				</div>
+			</div>
+			
+			<img id="cp1_circle" src="{{image_base_path}}/image/circle_line.png">
+			
+			<div id="cp1_bg_line">
+				<div id="rb_bg_uline_uv2_u0_p05_1_21">
+				  <div id="rb_bg_uline_uv2_u0_p05_1_21_1_17">
+				    <div id="rb_bg_uline_uv2_u0_p05_1_21_1_17_1_13">
+				      <div id="rb_bg_uline_uv2_u0_p05_1_21_1_17_1_13_2_3">
+				        <img id="rb_bg_uline_uv2_u0_p05_1_21_1_17_1_13_2_3_1_2" src="{{image_base_path}}/image/bg_line2.png">
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div id="rb_bg_uline_uv2_u0_p05_5_22">
+				  <div id="rb_bg_uline_uv2_u0_p05_5_22_5_18">
+				    <div id="rb_bg_uline_uv2_u0_p05_5_22_5_18_5_14">
+				      <div id="rb_bg_uline_uv2_u0_p05_5_22_5_18_5_14_6_6">
+				        <img id="rb_bg_uline_uv2_u0_p05_5_22_5_18_5_14_6_6_1_5" src="{{image_base_path}}/image/bg_line5.png">
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div id="rb_bg_uline_uv2_u0_p05_9_23">
+				  <div id="rb_bg_uline_uv2_u0_p05_9_23_9_19">
+				    <div id="rb_bg_uline_uv2_u0_p05_9_23_9_19_9_15">
+				      <div id="rb_bg_uline_uv2_u0_p05_9_23_9_19_9_15_10_9">
+				        <img id="rb_bg_uline_uv2_u0_p05_9_23_9_19_9_15_10_9_1_8" src="{{image_base_path}}/image/bg_line8.png">
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<div id="rb_bg_uline_uv2_u0_p05_13_24">
+				  <div id="rb_bg_uline_uv2_u0_p05_13_24_13_20">
+				    <div id="rb_bg_uline_uv2_u0_p05_13_24_13_20_13_16">
+				      <div id="rb_bg_uline_uv2_u0_p05_13_24_13_20_13_16_14_12">
+				        <img id="rb_bg_uline_uv2_u0_p05_13_24_13_20_13_16_14_12_1_11" src="{{image_base_path}}/image/bg_line11.png">
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			
+			<div id="cp1_man">
+				<img class="cp1_man" id="cp1_man1" src="{{image_base_path}}/image/man1.png">
+				<img class="cp1_man" id="cp1_man2" src="{{image_base_path}}/image/man2.png">
+				<img class="cp1_man" id="cp1_man3" src="{{image_base_path}}/image/man3.png">
+			</div>
+			<img id="cp1_ball" src="{{image_base_path}}/image/ball.png">
+			
+			<div id="cp1_obj">
+				
+				<img id="cp1_camp" src="{{image_base_path}}/image/camp.jpg">
+				
+				<div class="white" id="cp1_white"></div>
+				<div class="black" id="cp1_black"></div>
+				
+				<img id="cp1_light" src="{{image_base_path}}/image/cp1_light.png">
+				<div id="cp1_text1">
+					<img id="cp1_text1_img" src="{{image_base_path}}/image/cp1_text1.png">
+					<img id="cp1_text1_white" src="{{image_base_path}}/image/cp1_text1w.png">
+					<img id="cp1_text_ball_waku" src="{{image_base_path}}/image/ball_waku.png">
+					<div id="cp1_text_ball_mask"><img id="cp1_text_ball_body" src="{{image_base_path}}/image/ball_body.png"></div>
+					<img id="cp1_text_ball_tuya" src="{{image_base_path}}/image/ball_tuya.png">
+				</div>
+				<img id="cp1_particles1" src="{{image_base_path}}/image/particles.png">
+				<img id="cp1_particles2" src="{{image_base_path}}/image/particles.png">
+				
+				<div id="cp1_text2">
+					<img id="cp1_text2_img" src="{{image_base_path}}/image/cp1_text2.png">
+					<img id="cp1_text2_black" src="{{image_base_path}}/image/cp1_text2b.png">
+				</div>
+			</div>
+			
+		</div>
+		
+		<div id="cp2">
+			<img id="cp2_bg" src="{{image_base_path}}/image/bg2.jpg">
+			
+			<div id="cp2_obj"><div id="cp2_obj_pos">
+
+				<div id="stars_box">
+					<img class="stars stars1" src="{{image_base_path}}/image/stars.png">
+					<img class="stars stars2" src="{{image_base_path}}/image/stars.png">
+					<img class="stars stars3" src="{{image_base_path}}/image/stars.png">
+					<img class="stars stars4" src="{{image_base_path}}/image/stars.png">
+				</div>
+				
+				<div id="cp2_wave">
+					<img id="cp2_wave_bg" src="{{image_base_path}}/image/wave_bg.png">
+					<img id="cp2_camp" src="{{image_base_path}}/image/camp.jpg">
+					<div id="cp2_wave_top">
+						<img class="cp2_wave_base" src="{{image_base_path}}/image/wave_base.png">
+						<img class="cp2_wave_line1" src="{{image_base_path}}/image/wave_line1.png">
+						<img class="cp2_wave_line2" src="{{image_base_path}}/image/wave_line1.png">
+						<img class="cp2_wave_line3" src="{{image_base_path}}/image/wave_line1.png">
+					</div>
+					<div id="cp2_wave_bottom">
+						<img class="cp2_wave_base" src="{{image_base_path}}/image/wave_base.png">
+						<img class="cp2_wave_line1" src="{{image_base_path}}/image/wave_line1.png">
+						<img class="cp2_wave_line2" src="{{image_base_path}}/image/wave_line1.png">
+						<img class="cp2_wave_line3" src="{{image_base_path}}/image/wave_line1.png">
+					</div>
+				</div>
+				
+				<div id="cp2_obj1">
+					<img id="cp2_line" src="{{image_base_path}}/image/cp2_line.png">
+					<img id="cp2_text1" src="{{image_base_path}}/image/cp1_text1.png">
+					<img id="cp2_text2" src="{{image_base_path}}/image/cp1_text2.png">
+				</div>
+				
+				<div id="cp2_obj2">
+					<img class="cp2_circle" id="cp2_circle1" src="{{image_base_path}}/image/circle.png">
+					<img class="cp2_circle" id="cp2_circle2" src="{{image_base_path}}/image/circle.png">
+					<div id="cp2_obj2_anim">
+						<img id="cp2_line1" src="{{image_base_path}}/image/cp2_line1.png">
+						<img id="cp2_line2" src="{{image_base_path}}/image/cp2_line2.png">
+						<img id="cp2_text2_1" src="{{image_base_path}}/image/cp2_text2_1.png">
+						<img id="cp2_text2_2" src="{{image_base_path}}/image/cp2_text2_2.png">
+						<img id="cp2_text2_3" src="{{image_base_path}}/image/cp2_text2_3.png">
+					</div>
+					
+					<div id="cp2_obj3">
+						<div id="cp2_player_box">
+							<div class="cp2_player" id="cp2_player1">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b1" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player30.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player30w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player2">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b2" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player30.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player30w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player3">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b3" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player30.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player30w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player4">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b4" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player30.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player30w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player5">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b5" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player30.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player30w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player6">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b6" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player30.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player30w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player7">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b7" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player20.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player20w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player8">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b8" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player20.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player20w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player9">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b9" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player20.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player20w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player10">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b10" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player15.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player15w.png">
+							</div>
+							<div class="cp2_player" id="cp2_player11">
+								<img class="cp2_player_a" src="{{image_base_path}}/image/player10.png">
+								<img class="cp2_player_b "id="cp2_player_b11" src="{{image_base_path}}/image/player10w.png">
+								<img class="cp2_player_c" src="{{image_base_path}}/image/player15.png">
+								<img class="cp2_player_d" src="{{image_base_path}}/image/player15w.png">
+							</div>
+							
+							<div id="cp2_obj3_timer"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div id="cp2_obj4">
+					<img id="cp2_grow" src="{{image_base_path}}/image/grow.png">
+					<img id="cp2_item" src="{{image_base_path}}/image/item.jpg">
+					
+					<div class="white" id="cp2_obj4_white"></div>
+				</div>
+				
+			</div></div>
+			
+			<img id="cp2_head" src="{{image_base_path}}/image/head.png">
+			<img id="cp2_eyes1" src="{{image_base_path}}/image/eyes1.png">
+			<img id="cp2_eyes2" src="{{image_base_path}}/image/eyes2.png">
+				
+		</div>
+		
+	</div>
+	
+	<div id="touch">
+		<img id="touch_bg" src="{{image_base_path}}/image/touch_bg.png">
+		<img id="touch_touch" src="{{image_base_path}}/image/touch_touch.png">
+	</div>
+	
+	<div id="msg_box">
+		<img id="msg_bg" src="{{image_base_path}}/image/msg_bg.png">
+		<div id="msg_skip">
+			<img src="{{image_base_path}}/image/ball_waku.png">
+			<div id="ball_mask"><img class="none" src="{{image_base_path}}/image/ball_mask.png"><img id="ball_body" src="{{image_base_path}}/image/ball_body.png"></div>
+			<img src="{{image_base_path}}/image/ball_tuya.png">
+		</div>
+		<div id="msg_txt"></div>
+	</div>
+	<div class="white" id="cp2_white"></div>
+</div>
+</body>
+</html>

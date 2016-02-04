@@ -1,0 +1,97 @@
+<!--{% load smartphone_extra %}-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=320, user-scalable=no">
+<title>{{app_name}}</title>
+<style>
+:root {
+	background:#000;
+}
+</style>
+<script type="text/javascript">
+	if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0) {
+		document.write('<style type="text/css">* {-webkit-transform:translateZ(0)}</style>');
+	}
+</script>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<!--<link href="{{image_base_path}}/css/main.css" rel="stylesheet" type="text/css">
+{% if not opensocial_sandbox %}<script type="text/javascript" charset="utf-8" src="http://i.pf.gree.jp/js/app/touch.js"></script>{% else %}<script type="text/javascript" charset="utf-8" src="http://pf-sb.gree.jp/js/app/touch.js"></script>{% endif %}-->
+<script type="text/javascript">
+	//デバッグ（ローカル作業では「1」を使用）
+	var debug = 1;
+	
+	//サーバ差し替え用変数
+	//遷移先URL
+	var next_url = "";
+	
+
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+<!--<script type="text/javascript" src="{{image_base_path}}/js/main.js"></script>
+{% load_args_composition %}-->
+</head>
+
+<body>
+<div id="contents">
+	<div id="field">
+		<div id="img_load_dummy"></div>
+		<div id="cp1">
+			<div id="cp1_bg">
+				<img id="cp1_bg_img" src="{{image_base_path}}/image/bg.jpg">
+				<div id="cp1_door_l"><img id="cp1_door_img_l" src="{{image_base_path}}/image/bg_door.png"></div>
+				<div id="cp1_door_r"><img id="cp1_door_img_r" src="{{image_base_path}}/image/bg_door.png"></div>
+				<img id="cp1_door_eff" src="{{image_base_path}}/image/door_eff.png">
+				<img id="cp1_door_eff2" src="{{image_base_path}}/image/door_eff2.png">
+				
+			</div>
+			
+			<div class="black" id="cp1_black"></div>
+			<div class="white" id="cp1_white"></div>
+		</div>
+		
+		<div id="cp2">
+			<img id="cp2_bg" src="{{image_base_path}}/image/bg2.jpg">
+			<div id="cp2_angel">
+				<img class="cp2_angel" id="cp2_angel1" src="{{image_base_path}}/image/angel1.png">
+				<img class="cp2_angel" id="cp2_angel2" src="{{image_base_path}}/image/angel2.png">
+				<img class="cp2_angel" id="cp2_angel3" src="{{image_base_path}}/image/angel3.png">
+				<img class="cp2_angel" id="cp2_angel4" src="{{image_base_path}}/image/angel4.png">
+				<img class="cp2_angel" id="cp2_angel5" src="{{image_base_path}}/image/angel5.png">
+				<img class="cp2_angel" id="cp2_angel6" src="{{image_base_path}}/image/angel6.png">
+				<img class="cp2_angel" id="cp2_angel7" src="{{image_base_path}}/image/angel7.png">
+				<img class="cp2_angel" id="cp2_angel8" src="{{image_base_path}}/image/angel8.png">
+			</div>
+			<img id="cp2_particle1" src="{{image_base_path}}/image/particle.png">
+			<img id="cp2_particle2" src="{{image_base_path}}/image/particle.png">
+			<img id="cp2_feather1" src="{{image_base_path}}/image/feather.png">
+			<img id="cp2_feather2" src="{{image_base_path}}/image/feather.png">
+			<div id="cp2_title" src="{{image_base_path}}/image/title.png">
+				<img id="cp2_title_img" src="{{image_base_path}}/image/title.png">
+				<img id="cp2_title_light" src="{{image_base_path}}/image/title_light.png">
+			</div>
+			<div id="cp2_stars">
+			    <img id="cp2_stars_f" src="{{image_base_path}}/image/stars_f.png">
+			    <img id="cp2_stars_f2" src="{{image_base_path}}/image/stars_f.png">
+			    <img id="cp2_stars_s" src="{{image_base_path}}/image/stars_s.png">
+			    <img id="cp2_stars_s2" src="{{image_base_path}}/image/stars_s.png">
+		    </div>
+		    <img id="cp2_eff" src="{{image_base_path}}/image/eff.png">
+		    <div class="white" id="cp2_white"></div>
+		</div>
+		
+		<div id="touch">
+			<div id="touch_touch">
+				<img id="touch_img" src="{{image_base_path}}/image/touch_touch.png">
+				<div id="touch_mask"></div>
+			</div>
+			<div id="touch_load">
+				<img id="touch_img2" src="{{image_base_path}}/image/touch_load.png">
+				<div id="touch_mask2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

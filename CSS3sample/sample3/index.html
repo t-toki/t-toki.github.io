@@ -1,0 +1,285 @@
+<!--{% load smartphone_extra %}-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=320, user-scalable=no">
+<title>{{app_name}}</title>
+<style>
+:root {
+	background:#000;
+}
+</style>
+<script type="text/javascript">
+	if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0) {
+		document.write('<style type="text/css">* {-webkit-transform:translateZ(0)}</style>');
+	}
+</script>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<!--<link href="{{image_base_path}}/css/main.css" rel="stylesheet" type="text/css">
+{% if not opensocial_sandbox %}<script type="text/javascript" charset="utf-8" src="http://i.pf.gree.jp/js/app/touch.js"></script>{% else %}<script type="text/javascript" charset="utf-8" src="http://pf-sb.gree.jp/js/app/touch.js"></script>{% endif %}-->
+<script type="text/javascript">
+	//デバッグ（ローカル作業では「1」を使用）
+	var debug = 1;
+	
+	//サーバ差し替え用変数
+	//遷移先URL
+	var next_url = "";
+	var next_url_2 = "";
+	
+	var rep = 5;//ループ回数
+	var card_now = 37;
+	var card_max = 50;
+	
+	var rare1 = 1;
+	var chara1 = 1;
+	var colorType1 = 3;
+	var Vibration1 = 0;
+	var card1 = "image/card1.jpg";
+	
+	var rare2 = 0;
+	var chara2 = 1;
+	var colorType2 = 2;
+	var Vibration2 = 1;
+	var card2 = "image/card2.jpg";
+	
+	var rare3 = 0;
+	var chara3 = 3;
+	var colorType3 = 1;
+	var Vibration3 = 2;
+	var card3 = "image/card1.jpg";
+	
+	var rare4 = 1;
+	var chara4 = 4;
+	var colorType4 = 2;
+	var Vibration4 = 0;
+	var card4 = "image/card1.jpg";
+	
+	var rare5 = 0;
+	var chara5 = 5;
+	var colorType5 = 3;
+	var Vibration5 = 1;
+	var card5 = "image/card1.jpg";
+	
+/*
+	var str1_1 = "カードを10枚手に入れた！";
+	var str1_2 = "手に入れちゃったんだよ！";
+	var str2_1 = "3000円もあったら";
+	var str2_2 = "もっと遊べただろうに。";
+	var str3_1 = "では、そんな感じで。ﾉｼ";
+*/
+
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+<!--<script type="text/javascript" src="{{image_base_path}}/js/main.js"></script>
+{% load_args_composition %}-->
+</head>
+
+<body>
+<div id="contents">
+  <div id="field">
+  	<div id="img_load_dummy"></div>
+    <div id="cp1">
+	  <div id="cp1_obj">
+			<img class="cp1_skippable" id="cp1_bg" src="{{image_base_path}}/image/bg.jpg">
+		    <img class="cp1_skippable" id="cp1_light" src="{{image_base_path}}/image/light_y.png">
+		  	<img class="cp1_skippable" id="cp1_warriors" src="{{image_base_path}}/image/warriors.png">
+			<div class="cp1_skippable" id="cp1_men">
+				<div class= "men_r_a" >
+			  		<img class="men_a_base1" src="{{image_base_path}}/image/men_a_base1.png">
+			  		<img class="men_a_base2" src="{{image_base_path}}/image/men_a_base2.png">
+			  		<img class="men_a_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_a_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class= "men_r_b" >
+			  		<img class="men_b_base1" src="{{image_base_path}}/image/men_b_base1.png">
+			  		<img class="men_b_base2" src="{{image_base_path}}/image/men_b_base2.png">
+			  		<img class="men_b_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_b_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class= "men_l_a" >
+			  		<img class="men_a_base1" src="{{image_base_path}}/image/men_a_base1.png">
+			  		<img class="men_a_base2" src="{{image_base_path}}/image/men_a_base2.png">
+			  		<img class="men_a_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_a_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class= "men_l_b">
+			  		<img class="men_b_base1" src="{{image_base_path}}/image/men_b_base1.png">
+			  		<img class="men_b_base2" src="{{image_base_path}}/image/men_b_base2.png">
+			  		<img class="men_b_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_b_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class="men_l_c">
+			  		<img class="men_a_base1" src="{{image_base_path}}/image/men_a_base1.png">
+			  		<img class="men_a_base2" src="{{image_base_path}}/image/men_a_base2.png">
+			  		<img class="men_a_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_a_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+		  	</div>
+
+		  	<div id="cp1_weapons">
+		  		<img class="cp1_skippable cp1_weapons1" src="{{image_base_path}}/image/weapons1.png">
+			  	<img class="cp1_skippable cp1_weapons2" src="{{image_base_path}}/image/weapons2.png">
+			  	<img class="cp1_skippable cp1_weapons3" src="{{image_base_path}}/image/weapons3.png">
+			  	<img class="cp1_skippable cp1_weapons4" src="{{image_base_path}}/image/weapons4.png">
+			  	<img class="cp1_skippable cp1_weapons5" src="{{image_base_path}}/image/weapons5.png">
+			  	<img class="cp1_skippable cp1_weapons6" src="{{image_base_path}}/image/weapons6.png">
+			  	<img class="cp1_skippable cp1_weapons7" src="{{image_base_path}}/image/weapons7.png">
+			  	<img class="cp1_skippable cp1_weapons8" src="{{image_base_path}}/image/weapons8.png">
+			  	<img class="cp1_skippable cp1_weapons9" src="{{image_base_path}}/image/weapons9.png">
+			  	<img class="cp1_skippable cp1_weapons10" src="{{image_base_path}}/image/weapons10.png">
+			  	<img class="cp1_skippable cp1_weapons11" src="{{image_base_path}}/image/weapons11.png">
+			  	<img class="cp1_skippable cp1_weapons12" src="{{image_base_path}}/image/weapons12.png">
+		  	</div>
+		  	<div id="cp1_weapons_l">
+		  		<img class="cp1_skippable cp1_weapons1" src="{{image_base_path}}/image/weapons1.png">
+			  	<img class="cp1_skippable cp1_weapons2" src="{{image_base_path}}/image/weapons2.png">
+			  	<img class="cp1_skippable cp1_weapons3" src="{{image_base_path}}/image/weapons3.png">
+			  	<img class="cp1_skippable cp1_weapons4" src="{{image_base_path}}/image/weapons4.png">
+			  	<img class="cp1_skippable cp1_weapons5" src="{{image_base_path}}/image/weapons5.png">
+			  	<img class="cp1_skippable cp1_weapons6" src="{{image_base_path}}/image/weapons6.png">
+			  	<img class="cp1_skippable cp1_weapons7" src="{{image_base_path}}/image/weapons7.png">
+			  	<img class="cp1_skippable cp1_weapons8" src="{{image_base_path}}/image/weapons8.png">
+			  	<img class="cp1_skippable cp1_weapons9" src="{{image_base_path}}/image/weapons9.png">
+			  	<img class="cp1_skippable cp1_weapons10" src="{{image_base_path}}/image/weapons10.png">
+			  	<img class="cp1_skippable cp1_weapons11" src="{{image_base_path}}/image/weapons11.png">
+			  	<img class="cp1_skippable cp1_weapons12" src="{{image_base_path}}/image/weapons12.png">
+		  	</div>
+		  	
+	  	
+		    <img class="cp1_skippable" id="cp1_mask" src="{{image_base_path}}/image/bg_mask.png">
+		  	<img class="cp1_skippable" id="cp1_blackline" src="{{image_base_path}}/image/blackline.png">   	
+		  	<img class="cp1_skippable" id="cp1_dust" src="{{image_base_path}}/image/dust.png">
+		  	<img class="cp1_skippable" id="cp1_dust2" src="{{image_base_path}}/image/dust.png">
+		  	
+			<img class="char_sil" id="char1" src="{{image_base_path}}/image/char1.png">
+			<img class="char_sil" id="char2" src="{{image_base_path}}/image/char2.png">
+			<img class="char_sil" id="char3" src="{{image_base_path}}/image/char3.png">
+			<img class="char_sil" id="char4" src="{{image_base_path}}/image/char4.png">
+			<img class="char_sil" id="char5" src="{{image_base_path}}/image/char5.png">
+			<img class="char_sil" id="char6" src="{{image_base_path}}/image/char6.png">
+			<img class="char_sil" id="char7" src="{{image_base_path}}/image/char7.png">
+			<img class="char_sil" id="char8" src="{{image_base_path}}/image/char8.png">
+			<img class="char_sil" id="char9" src="{{image_base_path}}/image/char9.png">
+			<img class="char_sil" id="char10" src="{{image_base_path}}/image/char10.png">
+			<img class="char_sil" id="char11" src="{{image_base_path}}/image/char11.png">
+  		
+			<img class="char_sil2" id="char2_1" src="{{image_base_path}}/image/char1.png">
+			<img class="char_sil2" id="char2_2" src="{{image_base_path}}/image/char2.png">
+			<img class="char_sil2" id="char2_3" src="{{image_base_path}}/image/char3.png">
+			<img class="char_sil2" id="char2_4" src="{{image_base_path}}/image/char4.png">
+			<img class="char_sil2" id="char2_5" src="{{image_base_path}}/image/char5.png">
+			<img class="char_sil2" id="char2_6" src="{{image_base_path}}/image/char6.png">
+			<img class="char_sil2" id="char2_7" src="{{image_base_path}}/image/char7.png">
+			<img class="char_sil2" id="char2_8" src="{{image_base_path}}/image/char8.png">
+			<img class="char_sil2" id="char2_9" src="{{image_base_path}}/image/char9.png">
+			<img class="char_sil2" id="char2_10" src="{{image_base_path}}/image/char10.png">
+			<img class="char_sil2" id="char2_11" src="{{image_base_path}}/image/char11.png">
+		  	<div id="cp1_card">
+	      		<img class="cp1_card_grad" id="cp1_card_grad_r" src="{{image_base_path}}/image/gradation_r.png">
+	      		<img class="cp1_card_grad" id="cp1_card_grad_g" src="{{image_base_path}}/image/gradation_g.png">
+	      		<img class="cp1_card_grad" id="cp1_card_grad_b" src="{{image_base_path}}/image/gradation_b.png">
+		  	</div>
+		   	<div id="cp1_touch">
+		    	<div id="cp1_touch_touch">
+		     	<img id="cp1_touch_img" src="{{image_base_path}}/image/touch_touch.png">
+		     	<div id="cp1_touch_mask"></div>
+		    </div>
+	    </div>
+	    <div class="cp1_skippable" id="cp1_white"></div>
+	  	<div id="cp1_timer"></div>
+	  	<div id="cp1_timer2"></div>
+	  </div>
+    </div>
+    
+    <div id="cp2">
+    	<div id="cp2_obj">
+			<img id="cp2_bg" src="{{image_base_path}}/image/bg.jpg">
+	      	<img id="cp2_warriors" src="{{image_base_path}}/image/warriors.png">
+			<div id="cp2_men">
+				<div class= "men_r_a" >
+			  		<img class="men_a_base1" src="{{image_base_path}}/image/men_a_base1.png">
+			  		<img class="men_a_base2" src="{{image_base_path}}/image/men_a_base2.png">
+			  		<img class="men_a_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_a_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class= "men_r_b" >
+			  		<img class="men_b_base1" src="{{image_base_path}}/image/men_b_base1.png">
+			  		<img class="men_b_base2" src="{{image_base_path}}/image/men_b_base2.png">
+			  		<img class="men_b_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_b_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class= "men_l_a" >
+			  		<img class="men_a_base1" src="{{image_base_path}}/image/men_a_base1.png">
+			  		<img class="men_a_base2" src="{{image_base_path}}/image/men_a_base2.png">
+			  		<img class="men_a_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_a_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class= "men_l_b">
+			  		<img class="men_b_base1" src="{{image_base_path}}/image/men_b_base1.png">
+			  		<img class="men_b_base2" src="{{image_base_path}}/image/men_b_base2.png">
+			  		<img class="men_b_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_b_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+			  	<div class="men_l_c">
+			  		<img class="men_a_base1" src="{{image_base_path}}/image/men_a_base1.png">
+			  		<img class="men_a_base2" src="{{image_base_path}}/image/men_a_base2.png">
+			  		<img class="men_a_spear1" src="{{image_base_path}}/image/men_spear.png">
+			  		<img class="men_a_spear2" src="{{image_base_path}}/image/men_spear.png">
+			  	</div>
+		  	</div>
+	      	<img id="cp2_mask" src="{{image_base_path}}/image/bg_mask.png">
+		    <img id="cp2_light" src="{{image_base_path}}/image/light.png">
+		    <div id="cp2_light_line1"><img id="cp2_light_line_img1" src="{{image_base_path}}/image/light_line.png"></div>
+		    <div id="cp2_light_line2"><img id="cp2_light_line_img2" src="{{image_base_path}}/image/light_line.png"></div>
+		    <div id="cp2_light_line3"><img id="cp2_light_line_img3" src="{{image_base_path}}/image/light_line.png"></div>
+		    <div id="cp2_light_line4"><img id="cp2_light_line_img4" src="{{image_base_path}}/image/light_line.png"></div>
+		    <div id="cp2_light_line5"><img id="cp2_light_line_img5" src="{{image_base_path}}/image/light_line.png"></div>
+      		<div id="cp2_card">
+      			<div class="white" id="cp2_card_white"></div>
+      		</div>
+	      	<img id="cp2_particle" src="{{image_base_path}}/image/particle.png">
+      		<div id="cp2_stars">
+			    <img id="cp2_stars_f" src="{{image_base_path}}/image/stars_f.png">
+			    <img id="cp2_stars_f2" src="{{image_base_path}}/image/stars_f.png">
+			    <img id="cp2_stars_s" src="{{image_base_path}}/image/stars_s.png">
+			    <img id="cp2_stars_s2" src="{{image_base_path}}/image/stars_s.png">
+		    </div>
+		    
+		    <div id="cp2_counter">
+	     		<img id="cp2_counter_bg" src="{{image_base_path}}/image/counter_bg.png">
+	     		<p id="cp2_counter_left"></p>
+	     		<p id="cp2_counter_right"></p>
+	     	</div>
+	     	
+	      	<img class="cp2_thunder1" id="cp2_thunder1_r" src="{{image_base_path}}/image/thunder1_r.jpg">
+	      	<img class="cp2_thunder1" id="cp2_thunder1_g" src="{{image_base_path}}/image/thunder1_g.jpg">
+	      	<img class="cp2_thunder1" id="cp2_thunder1_b" src="{{image_base_path}}/image/thunder1_b.jpg">
+	      	<img class="cp2_thunder2" id="cp2_thunder2_r" src="{{image_base_path}}/image/thunder2_r.png">
+	      	<img class="cp2_thunder2" id="cp2_thunder2_g" src="{{image_base_path}}/image/thunder2_g.png">
+	      	<img class="cp2_thunder2" id="cp2_thunder2_b" src="{{image_base_path}}/image/thunder2_b.png">
+	     	    
+		    <div id="cp2_touch">
+		           <div id="cp2_touch_touch"><img id="cp2_touch_img" src="{{image_base_path}}/image/touch_touch.png">
+			        <div id="cp2_touch_mask"></div>
+			      </div>
+			      <div id="cp2_touch_load">
+			      	<img id="cp2_touch_img2" src="{{image_base_path}}/image/touch_load.png">
+			        <div id="cp2_touch_mask2"></div>
+			      </div>
+		    </div>
+	     	<div id="cp2_timer"></div>
+      </div>
+    </div>
+    
+    <div id="msg_box"><img id="window" src="{{image_base_path}}/image/window.png">
+      <div id="msg_skip"><img id="skip_img" src="{{image_base_path}}/image/skip.png"></div>
+      <div id="msg_txt"></div>
+    </div>
+    
+    <img id="all_skip" src="{{image_base_path}}/image/bt_skip.png">
+    
+  </div>
+</div>
+</body>
+</html>
